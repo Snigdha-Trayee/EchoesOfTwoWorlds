@@ -1,0 +1,24 @@
+TRAYEE MAP IMPLEMENTATION UPDATE
+
+This build translates the proposed 10-column x 8-row grids in level_design/LEVEL_1_MAP.md and LEVEL_2_MAP.md into the Pygame scene coordinates.
+
+Implemented in main.py:
+- Level 1 spawn at B2.
+- Garden landmark at E2.
+- Separate, initially subtle inscription clue at D3; press E nearby to read it.
+- Three symbols at C4, F4, and H5; they are only clearly revealed nearby.
+- Ancient Arch / portal at H7.
+- Observatory arrival at B2.
+- Observatory entrance, Star Map Hall, clue, celestial puzzle chamber, and final discovery marker positioned using Trayee's grid.
+
+Important limitation: the source map is labelled a proposed grid, and the current combat flow still places the active Shadow Guardian encounter in the Observatory, whereas Trayee's Level 1 map labels a guardian arena at G6. The portal currently requires the inscription and all three symbols; it does not require defeating a Level 1 guardian. This is a partial map-to-gameplay alignment, not a claim that every map mechanic is fully implemented.
+
+Run from this folder with: py -3.13 main.py
+
+DIFFICULTY UPDATE (2026-10-13)
+- Memory symbols are visually revealed only within 92 pixels, and collection still requires moving within 65 pixels and pressing E.
+- The Ancient Arch label is hidden until the player is nearby (unless unlocked), reducing the obvious destination marker.
+- Level 1 now requires examining the Garden Mark, reading the separate inscription, and collecting all three symbols before the Arch unlocks.
+- Approaching the dormant Arch gives a contextual list of missing steps, so the challenge is exploration rather than guesswork.
+- The existing Observatory rune-order puzzle and guardian combat remain in place.
+- Limitation: the Level 1 guardian arena shown in Trayee's map is not yet a separate combat encounter; the existing guardian fight remains in the Observatory.

@@ -1,0 +1,23 @@
+Echoes of Two Worlds — Bhavya Art Integration
+
+What changed:
+- Replaced the Living Realm and Forgotten Realm backgrounds with the *_Final.png art.
+- Replaced the drawn portal with Art/SharedObjects/Portal.png.
+- Replaced the drawn guardian with Shadow_Creature.png (collision and health logic retained).
+- Replaced the three drawn memory symbols with rune_stone.png.
+- Added crystal, rock, and plant props as scene decorations.
+- Kept the existing idle/walk/attack player animation frames from the previously reviewed animation pack.
+- Kept the existing gameplay code, movement, puzzle sequence, portal unlock, combat, and realm transitions.
+
+Asset paths used at runtime:
+- assets/backgrounds/
+- assets/player/{idle,walk,attack}/
+- assets/world/
+
+The complete original art handoff and license/credit files are preserved under art_source/.
+The decorative art positions and sizes may need visual tuning after a local play test.
+
+Run:
+  py -3.13 -m pip install pygame
+  py -3.13 main.py
+\n\nFollow-up fix: Forgotten Realm Ancient Mechanism now renders Bhavya's portal artwork. Memory collection messages now use the randomized rune identity for each clue, so displayed clue names match the puzzle sequence. Existing puzzle and interaction logic is preserved.\n

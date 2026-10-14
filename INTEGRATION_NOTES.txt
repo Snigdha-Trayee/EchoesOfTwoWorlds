@@ -1,0 +1,35 @@
+ECHOES OF TWO WORLDS - INTEGRATION UPDATE
+
+Included teammate work
+- Trayee's game/game_director.py, discovery_manager.py, objectives.py, cinematic_events.py
+- Trayee's level design documents and GameDirector tests
+- Bhavya's final Living Realm and Forgotten Realm background images
+- Bhavya's portal, rune stone, crystal, plant, rock, and shadow creature art
+- Player idle/walk/attack animation frames from the supplied project assets
+- Bhavya's music and sound effects with attribution/license files
+
+Gameplay changes in this build
+- Added axis-separated player collision against solid rock/crystal scenery.
+- Repositioned decorative scenery to avoid blocking the player spawn and clue locations.
+- Connected Trayee's discovery/symbol/objective flow to the in-game collection and guardian events.
+- Added a visible current-objective HUD.
+- Added sound cues for attack, guardian defeat, portal use, successful puzzle, and incorrect puzzle.
+- Kept the restart, health, guardian chase/attack, three-memory collection, realm transition, and rune puzzle flow.
+
+Run
+1. Extract the complete ZIP to a new folder.
+2. Open that folder in VS Code.
+3. In the terminal run: py -3.13 main.py
+
+Controls
+- WASD or arrow keys: move
+- E: collect a memory / interact with portal or mechanism
+- SPACE: attack the Shadow Guardian in the Observatory
+- 1, 2, 3: choose runes while the puzzle is open
+- ENTER: submit puzzle; BACKSPACE: clear; ESC: close puzzle/quit
+- R: restart after victory or game over
+
+Validation
+- Trayee's 10 GameDirector unit tests pass.
+- Python syntax compilation passes for main.py, audio_manager.py, and game modules.
+- Full Pygame runtime could not be launched in the build environment because Pygame is not installed there. Run it locally with the project's Pygame installation and report any traceback for follow-up.

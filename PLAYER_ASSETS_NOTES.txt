@@ -1,0 +1,5 @@
+Player animation review
+
+Used player_animation_frames (1).zip because it includes idle, walk, and attack animations. The separate 8-frame walk ZIP was not selected: its preview showed small stray pixels near several frames and it did not include idle/attack animations. PNG alpha transparency was preserved; tiny disconnected specks were removed, while larger attack effects were kept. Frames are loaded from assets/player/{idle,walk,attack}.
+
+Run from this folder with: py -3.13 main.py

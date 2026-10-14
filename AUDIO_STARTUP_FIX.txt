@@ -1,0 +1,1 @@
+Fixed AudioManager startup compatibility. AudioManager() now defaults to this project folder and supports the method names used by main.py. Run from this folder with: py -3.13 main.py

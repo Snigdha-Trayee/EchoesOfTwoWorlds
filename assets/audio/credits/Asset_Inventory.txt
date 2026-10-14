@@ -1,0 +1,28 @@
+# Echoes of Two Worlds — Asset Inventory
+
+## Environment Backgrounds
+- living_realm.png
+- forgotten_realm.png
+
+## Shared Art Objects
+- portal.png
+- rune_stone.png
+- crystal.png
+- rock.png
+- plant.png
+
+## Music
+- Forest Whisper.ogg
+- Sirens in Darkness
+
+## Sound Effects
+- footstep04.ogg
+- metalClick.ogg
+- handleCoins.ogg
+- jingles_HIT02.ogg
+
+## Credits and Licenses
+- License.txt
+- MusicJingles_License.txt
+- ForestWhisper_Credit.txt
+- SirensInDarkness_Credit.txt
