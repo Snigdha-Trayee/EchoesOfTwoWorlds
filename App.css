@@ -1,0 +1,694 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #080b25;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-screen {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background: #080b25 url("/background.png") center center / cover no-repeat;
+}
+
+.title-screen,
+.login-screen,
+.welcome-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title-screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 4%;
+}
+
+.game-menu {
+  width: clamp(220px, 27vw, 350px);
+  margin-right: 2%;
+  margin-top: 8%;
+  text-align: center;
+}
+
+.menu-eyebrow,
+.form-eyebrow {
+  color: #d8d2ff;
+  font-size: clamp(10px, 1vw, 13px);
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px #788bff;
+}
+
+.magic-button {
+  position: relative;
+  width: 100%;
+  min-height: 55px;
+  padding: 13px 15px;
+  margin-top: 16px;
+  color: #f7f2ff;
+  background: linear-gradient(180deg, #292080, #100c48 60%, #21156f);
+  border: 2px solid #8bbaff;
+  outline: 1px solid #5e6bff;
+  outline-offset: 3px;
+  border-radius: 5px;
+  box-shadow:
+    0 0 12px #416dff,
+    0 0 26px rgba(87, 72, 255, 0.7),
+    inset 0 0 12px rgba(125, 140, 255, 0.35);
+  cursor: pointer;
+  font-size: clamp(13px, 1.35vw, 19px);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.magic-button::before,
+.magic-button::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  color: #c7e5ff;
+  font-size: 18px;
+  text-shadow: 0 0 10px #4f8dff;
+  transform: translateY(-50%);
+}
+
+.magic-button::before {
+  left: 8px;
+}
+
+.magic-button::after {
+  right: 8px;
+}
+
+.magic-button:hover {
+  transform: scale(1.035);
+  box-shadow:
+    0 0 18px #70a6ff,
+    0 0 38px #514bff,
+    inset 0 0 18px rgba(125, 140, 255, 0.5);
+}
+
+.magic-button:focus-visible,
+.back-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 5px;
+}
+
+.menu-footer {
+  color: #fff0c1;
+  font-size: clamp(11px, 1.1vw, 15px);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #2b205c;
+  margin-top: 25px;
+}
+
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: rgba(5, 8, 32, 0.4);
+}
+
+.back-button {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: white;
+  background: rgba(14, 14, 62, 0.9);
+  border: 1px solid #8bbaff;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.login-card {
+  width: min(410px, 100%);
+  max-height: 94%;
+  overflow-y: auto;
+  padding: 28px;
+  border: 1px solid #819bff;
+  border-radius: 10px;
+  background: rgba(7, 9, 39, 0.94);
+  box-shadow: 0 0 30px rgba(77, 100, 255, 0.6);
+}
+
+.login-card h2,
+.welcome-screen h2 {
+  margin: 10px 0;
+  color: #f0eaff;
+  text-align: center;
+  text-shadow: 0 0 14px #7588ff;
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.form-eyebrow,
+.form-description {
+  text-align: center;
+}
+
+.form-description,
+.welcome-screen p {
+  color: #d5d9f7;
+  font-size: 14px;
+}
+
+.login-card label {
+  display: block;
+  margin: 20px 0 8px;
+  color: #e0e4ff;
+  font-size: 14px;
+}
+
+.login-card input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  color: white;
+  background: #101633;
+  border: 1px solid #697dbb;
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-card input::placeholder {
+  color: #a8b1d3;
+}
+
+.login-card input:focus {
+  border-color: #a4d4ff;
+  box-shadow: 0 0 12px rgba(100, 140, 255, 0.4);
+}
+
+.error-message {
+  color: #ff9eaf;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.submit-button {
+  margin-top: 8px;
+}
+
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(5, 8, 32, 0.45);
+}
+
+.welcome-screen .magic-button {
+  width: min(320px, 90%);
+}
+
+@media (max-width: 650px) {
+  .title-screen {
+    justify-content: center;
+    align-items: flex-end;
+    padding: 25px 22px 8vh;
+  }
+
+  .game-menu {
+    width: min(330px, 90%);
+    margin: 0;
+    padding: 14px;
+    background: rgba(7, 9, 38, 0.35);
+    border-radius: 8px;
+  }
+
+  .menu-footer {
+    margin-top: 20px;
+  }
+
+  .login-card {
+    padding: 23px;
+  }
+}
+
+@media (max-height: 480px) {
+  .game-menu {
+    margin-top: 0;
+  }
+
+  .magic-button {
+    min-height: 45px;
+    margin-top: 10px;
+    padding: 9px;
+  }
+
+  .menu-footer {
+    margin-top: 12px;
+  }
+
+  .login-card {
+    padding: 16px 22px;
+  }
+
+  .login-card label {
+    margin-top: 12px;
+  }
+}
+
+
+/* ===== PORTAL AWAKENS ===== */
+
+.portal-screen,
+.clue-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #04091c;
+}
+
+/* Portal and clue images fill the complete screen */
+.portal-art,
+.clue-art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enter Portal button on the supplied portal artwork */
+.portal-enter-button,
+.clue-continue-button {
+  position: absolute;
+  border: 0;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Enter Portal button */
+.portal-enter-button {
+  left: 56%;
+  top: 68%;
+  width: 27%;
+  height: 12%;
+}
+
+.portal-enter-button:hover,
+.portal-enter-button:focus-visible {
+  outline: 2px solid #65dcff;
+  box-shadow: 0 0 24px #448cff;
+  background: #66baff16;
+}
+
+/* Continue button on clue artwork */
+.clue-continue-button {
+  left: 39%;
+  top: 70%;
+  width: 30%;
+  height: 13%;
+}
+
+.clue-continue-button:hover,
+.clue-continue-button:focus-visible {
+  outline: 2px solid #a88cff;
+  box-shadow: 0 0 24px #885cff;
+  background: #9b6cff16;
+}
+
+/* Memory seal restored screen */
+.restored-card {
+  width: min(500px, calc(100% - 30px));
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(145deg, #071a36f5, #100a36f5);
+  border: 2px solid #d8ae61;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #547aff88;
+}
+
+.restored-card h1 {
+  color: #e7d7ff;
+  text-shadow: 0 0 16px #8c69ff;
+}
+
+.restored-card p {
+  line-height: 1.6;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  .portal-enter-button {
+    left: 54%;
+    top: 68%;
+    width: 31%;
+    height: 12%;
+  }
+
+  .clue-continue-button {
+    left: 35%;
+    top: 70%;
+    width: 36%;
+    height: 13%;
+  }
+
+  .restored-card {
+    padding: 20px;
+  }
+}
+/* MOON, SUN AND STAR CLUE SCREEN */
+.clue-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #04091c;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.clue-art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  object-position: center;
+  image-rendering: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Continue button: invisible until hovered or focused */
+.clue-continue-button {
+  position: absolute;
+  left: 39%;
+  top: 75%;
+  width: 29%;
+  height: 13%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.clue-continue-button:hover {
+  background: rgba(102, 186, 255, 0.06);
+}
+
+.clue-continue-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.clue-continue-button:focus-visible {
+  outline: 2px solid #65dcff;
+  outline-offset: 2px;
+  box-shadow: 0 0 12px rgba(68, 140, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+  .clue-continue-button {
+    left: 35%;
+    top: 70%;
+    width: 36%;
+    height: 13%;
+  }
+}
+/* MOON RUNE QUIZ */
+.quiz-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at top, #20245b 0%, #080b25 65%);
+  color: white;
+}
+
+.quiz-card {
+  width: min(620px, 100%);
+  padding: clamp(22px, 4vw, 40px);
+  border: 1px solid #8bbaff;
+  border-radius: 16px;
+  background: rgba(7, 9, 39, 0.96);
+  box-shadow: 0 0 35px rgba(87, 72, 255, 0.35);
+}
+
+.quiz-eyebrow,
+.quiz-progress {
+  color: #bfcaff;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.quiz-card h1,
+.quiz-card h2 {
+  text-align: center;
+  color: #f0eaff;
+  text-shadow: 0 0 12px #7588ff;
+}
+
+.quiz-card h1 {
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.quiz-card h2 {
+  font-size: clamp(18px, 3vw, 23px);
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.quiz-option {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-align: left;
+  background: #101633;
+  border: 1px solid #697dbb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quiz-option:hover,
+.quiz-option.selected {
+  border-color: #8bbaff;
+  background: #24245e;
+  box-shadow: 0 0 12px #416dff55;
+}
+
+.quiz-next {
+  width: 100%;
+}
+
+.quiz-next:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   PORTAL SCREEN — REGULAR + FINAL SLIDE
+===================================== */
+
+.portal-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  background: #06152d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.portal-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Invisible clickable area over the Enter Portal
+   button shown in your portal image. */
+
+.portal-enter-button {
+  position: absolute;
+  left: 70%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: 13%;
+  min-width: 150px;
+  min-height: 45px;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+/* Keyboard accessibility */
+
+.portal-enter-button:focus-visible {
+  outline: 3px solid #8eeaff;
+  outline-offset: 5px;
+}
+
+/* Fit the portal scene on smaller screens */
+
+@media (max-width: 700px) {
+
+/* =====================================
+   FULL-SCREEN PORTAL — FIT EXACTLY
+===================================== */
+
+.portal-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #06152d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.portal-art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enter Portal clickable area */
+
+.portal-enter-button {
+  position: absolute;
+  left: 70%;
+  top: 74%;
+  transform: translate(-50%, -50%);
+  width: 27%;
+  height: 13%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.portal-enter-button:focus-visible {
+  outline: 3px solid #8eeaff;
+  outline-offset: 3px;
+}
+
+/* Remove default page spacing */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.game-screen {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+}
