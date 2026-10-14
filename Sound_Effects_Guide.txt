@@ -1,0 +1,8 @@
+# Echoes of Two Worlds — Sound Effects Guide
+
+- **footstep04.ogg** — Footstep sound
+- **metalClick.ogg** — Metal interaction or click
+- **handleCoins.ogg** — Coins or item pickup
+- **jingles_HIT02.ogg** — Cheerful success or reward sound
+
+Project: Echoes of Two Worlds

@@ -1,0 +1,38 @@
+ECHOES OF TWO WORLDS — LEVEL 1 PUZZLE LOGIC
+
+Level: Garden of Lost Memories
+
+Objective:
+Discover three runes and restore the Memory Seal.
+
+Rune order:
+1. Moon Rune
+2. Sun Rune
+3. Star Rune
+
+Controls:
+- E: Interact with a rune or portal
+- J: Open the Clue Log
+- ESC: Close the Clue Log
+
+Clue collection:
+Interacting with each rune displays its clue and records it in the Clue Log.
+
+Puzzle rules:
+- Accept Moon as the first activation.
+- Accept Sun as the second activation.
+- Accept Star as the third activation.
+- If the player activates a rune out of order, display an error message and reset the activation sequence.
+
+Victory condition:
+After all three runes are activated in the correct order, restore the Memory Seal and open the portal.
+
+Completion:
+When the player presses E near the open portal, display level1_complete.png.
+
+Required assets:
+- level1_puzzle.png
+- level1_journal.png
+- level1_complete.png
+
+Note: All keyboard controls, puzzle states, and portal transitions must be implemented in Unity.

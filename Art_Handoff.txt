@@ -1,0 +1,20 @@
+# Echoes of Two Worlds — Art Handoff
+
+## Environment Scenes
+- living_realm.png — Living Realm background
+- forgotten_realm.png — Forgotten Realm background
+
+## Shared Objects
+- portal.png — Reusable portal artwork
+- rune_stone.png — Rune stone artwork
+- crystal.png — Crystal artwork
+- rock.png — Rock artwork
+- plant.png — Plant artwork
+
+## Editable Projects
+- Living_Realm.xcf
+- Forgotten_Realm.xcf
+- Portal.xcf
+- Rune_Stone.xcf
+
+Original PNG assets remain in the Art folders for reuse.
